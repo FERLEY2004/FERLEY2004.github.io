@@ -284,11 +284,8 @@
       .map((h) => `<li>${icon("check")}<span>${escapeHtml(h)}</span></li>`)
       .join("");
 
-    const photoAlt = t.about.photoAlt;
-    ["#aboutPhoto", "#heroPhoto"].forEach((sel) => {
-      const el = $(sel);
-      if (el && photoAlt) el.alt = photoAlt;
-    });
+    const photo = $("#aboutPhoto");
+    if (photo && t.about.photoAlt) photo.alt = t.about.photoAlt;
   }
 
   function renderTimeline() {
