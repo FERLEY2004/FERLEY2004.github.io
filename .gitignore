@@ -1,0 +1,22 @@
+# Variables de entorno y credenciales: nunca deben subirse a GitHub
+.env
+.env.*
+*.pem
+*.key
+
+# Historial local de VS Code (extensión Local History)
+.lh/
+.history/
+
+# Dependencias y compilados
+node_modules/
+dist/
+build/
+
+# Sistema operativo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
