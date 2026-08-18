@@ -121,6 +121,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 }
 .skip-link:focus { top: 1rem; }
 
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .icon {
   width: 1.15em;
   height: 1.15em;
@@ -944,6 +952,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 }
 
 .contact__form {
+  position: relative;
   display: grid;
   gap: 1.15rem;
   padding: 2.2rem;

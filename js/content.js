@@ -23,10 +23,9 @@ const PROFILE = {
   // ("assets/CV.pdf"). Mientras estén vacías, el botón de descarga no aparece.
   cvEs: "assets/CV.pdf",
   cvEn: "assets/CV-EN.pdf",
-  // Formulario de contacto: crea un formulario gratis en https://formspree.io
-  // y pega aquí la URL (ej. "https://formspree.io/f/abcdwxyz").
-  // Si lo dejas vacío, el formulario abrirá el gestor de correo del visitante.
-  formEndpoint: "",
+  // Los mensajes llegan a Gmail vía FormSubmit. La primera vez, Gmail te pedirá
+  // confirmar el enlace. Luego funcionan solos.
+  formEndpoint: "https://formsubmit.co/ajax/Ferleyorobio68@gmail.com",
   available: true,
 };
 

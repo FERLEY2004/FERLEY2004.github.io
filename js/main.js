@@ -519,6 +519,13 @@
 
       const data = Object.fromEntries(new FormData(form).entries());
 
+      if (data._gotcha) {
+        status.textContent = t.contact.success;
+        status.classList.add("is-success");
+        form.reset();
+        return;
+      }
+
       // Sin endpoint configurado: se abre el cliente de correo del visitante.
       if (!PROFILE.formEndpoint) {
         const body = `${data.name} <${data.email}>\n\n${data.message}`;
@@ -534,12 +541,29 @@
       submitLabel.textContent = t.contact.sending;
 
       try {
+        const isAjaxJson = /formsubmit\.co\/ajax/i.test(PROFILE.formEndpoint);
+        const payload = {
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          _subject: `Portafolio: ${data.subject} — ${data.name}`,
+          _template: "table",
+          _captcha: "false",
+        };
+
         const res = await fetch(PROFILE.formEndpoint, {
           method: "POST",
-          headers: { Accept: "application/json" },
-          body: new FormData(form),
+          headers: isAjaxJson
+            ? { Accept: "application/json", "Content-Type": "application/json" }
+            : { Accept: "application/json" },
+          body: isAjaxJson ? JSON.stringify(payload) : new FormData(form),
         });
-        if (!res.ok) throw new Error("Request failed");
+
+        const json = await res.json().catch(() => ({}));
+        const failed = !res.ok || json.success === false || json.success === "false";
+        if (failed) throw new Error("Request failed");
+
         status.textContent = t.contact.success;
         status.classList.add("is-success");
         form.reset();
