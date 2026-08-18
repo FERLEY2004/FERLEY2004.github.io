@@ -1105,8 +1105,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
   .hero__layout { grid-template-columns: 1fr; }
   .hero__photo {
     justify-self: center;
-    max-width: 260px;
-    order: -1;
+    max-width: 240px;
+    margin-top: 0.5rem;
   }
 }
 
