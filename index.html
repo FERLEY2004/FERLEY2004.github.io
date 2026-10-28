@@ -89,30 +89,47 @@
   <main id="main">
     <!-- ====================== HERO ====================== -->
     <section class="hero" id="hero">
-      <div class="container hero__inner">
-        <p class="hero__badge" id="heroBadge">
-          <span class="dot" aria-hidden="true"></span>
-          <span data-i18n="hero.badge">Disponible para nuevos proyectos</span>
-        </p>
+      <div class="container">
+        <div class="hero__layout">
+          <div class="hero__inner">
+            <p class="hero__badge" id="heroBadge">
+              <span class="dot" aria-hidden="true"></span>
+              <span data-i18n="hero.badge">Disponible para nuevos proyectos</span>
+            </p>
 
-        <h1 class="hero__title">
-          <span class="hero__greeting" data-i18n="hero.greeting">Hola, soy</span>
-          <span class="hero__name" data-bind="profile.name">Ferley Orobio</span>
-          <span class="hero__role" data-i18n="hero.role">Desarrollador Full Stack</span>
-        </h1>
+            <h1 class="hero__title">
+              <span class="hero__greeting" data-i18n="hero.greeting">Hola, soy</span>
+              <span class="hero__name" data-bind="profile.name">Ferley Orobio</span>
+              <span class="hero__role" data-i18n="hero.role">Desarrollador Full Stack</span>
+            </h1>
 
-        <p class="hero__tagline" data-i18n="hero.tagline"></p>
+            <p class="hero__tagline" data-i18n="hero.tagline"></p>
 
-        <div class="hero__actions">
-          <a href="#work" class="btn btn--primary">
-            <span data-i18n="hero.ctaPrimary">Ver proyectos</span>
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn--ghost" id="cvBtn" download hidden>
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
-            <span data-i18n="hero.ctaSecondary">Descargar CV</span>
-          </a>
-          <ul class="socials" id="socials" aria-label="Redes sociales"></ul>
+            <div class="hero__actions">
+              <a href="#work" class="btn btn--primary">
+                <span data-i18n="hero.ctaPrimary">Ver proyectos</span>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn--ghost" id="cvBtn" download hidden>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+                <span data-i18n="hero.ctaSecondary">Descargar CV</span>
+              </a>
+              <ul class="socials" id="socials" aria-label="Redes sociales"></ul>
+            </div>
+          </div>
+
+          <aside class="about__card hero__card">
+            <div class="about__avatar">
+              <img src="assets/foto.png" alt="Ferley Orobio" id="aboutPhoto" width="184" height="184">
+            </div>
+            <p class="about__name" data-bind="profile.name">Ferley Orobio</p>
+            <p class="about__role" data-i18n="hero.role">Desarrollador Full Stack</p>
+            <p class="about__location">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span data-bind="profile.location">Cali, Colombia</span>
+            </p>
+            <ul class="about__highlights" id="aboutHighlights"></ul>
+          </aside>
         </div>
 
         <ul class="stats" id="heroStats"></ul>
@@ -169,24 +186,12 @@
 
     <!-- ====================== SOBRE MÍ ====================== -->
     <section class="section" id="about">
-      <div class="container about">
+      <div class="container">
         <div class="about__text reveal">
           <p class="eyebrow" data-i18n="about.eyebrow">Sobre mí</p>
           <h2 class="section__title" data-i18n="about.title"></h2>
           <div id="aboutParagraphs"></div>
         </div>
-        <aside class="about__card reveal">
-            <div class="about__avatar">
-              <img src="assets/foto.png" alt="Ferley Orobio" id="aboutPhoto" width="184" height="184">
-            </div>
-          <p class="about__name" data-bind="profile.name">Ferley Orobio</p>
-          <p class="about__role" data-i18n="hero.role">Desarrollador Full Stack</p>
-          <p class="about__location">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <span data-bind="profile.location">Cali, Colombia</span>
-          </p>
-          <ul class="about__highlights" id="aboutHighlights"></ul>
-        </aside>
       </div>
     </section>
 

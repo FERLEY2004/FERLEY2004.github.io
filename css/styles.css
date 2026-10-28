@@ -349,7 +349,18 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
   padding: calc(var(--header-h) + 4rem) 0 4rem;
 }
 
-.hero__inner { max-width: 900px; }
+.hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.hero__inner { max-width: none; }
+
+.hero__card {
+  width: 100%;
+}
 
 .hero__badge {
   display: inline-flex;
@@ -780,16 +791,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 /* ============================================================================
    12. SOBRE MÍ
    ========================================================================= */
-.about {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  gap: 3rem;
-  align-items: start;
-}
-
-.about__text p + p { margin-top: 1.1rem; }
+.about__text { max-width: 68ch; }
 .about__text .section__title { margin-bottom: 1.6rem; }
 .about__text p { color: var(--text-muted); }
+.about__text p + p { margin-top: 1.1rem; }
 
 .about__card {
   padding: 2.2rem;
@@ -1085,6 +1090,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
   .about, .contact { grid-template-columns: 1fr; gap: 1.5rem; }
   .project.is-featured { grid-column: span 1; }
   .hero { min-height: auto; padding-bottom: 3rem; }
+  .hero__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero__card {
+    max-width: 420px;
+    width: 100%;
+    justify-self: center;
+  }
   .header__cta { display: none; }
   .menu-btn { display: flex; }
   .nav {
